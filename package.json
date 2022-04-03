@@ -18,11 +18,15 @@
     "types",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com"
+    "url": "https://github.com/MisterZhouZhou/mz-dingtalk-msg.git"
   },
-  "keywords": [],
+  "homepage": "https://github.com/MisterZhouZhou/mz-dingtalk-msg",
+  "keywords": ["dingtalk", "rollup"],
   "author": "misterzhouzhou <16619930394@163.com>",
   "license": "MIT",
   "devDependencies": {
