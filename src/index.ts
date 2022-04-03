@@ -1,1 +1,1 @@
-export * from './reactivity'
+export { default as DingTalk } from './dingtalk'

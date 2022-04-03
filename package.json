@@ -1,30 +1,43 @@
 {
-  "name": "rollup-template",
+  "name": "dingtalk-msg",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "钉钉机器人发送消息",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "typings/index.d.ts",
   "scripts": {
-    "dev": "NODE_ENV=development rollup -c -w",
-    "build": "NODE_ENV=production rollup -c && && yarn copy",
-    "copy": "yarn copy:package",
-    "copy:package": "cp package.json README.md dist",
-    "publish:dist": "yarn build && node scripts/publish.js",
+    "dev": "NODE_ENV=development rollup -c",
+    "build": "NODE_ENV=production rollup -c && yarn api:run && rm -rf dist/*.d.ts",
+    "copy": "cp package.json dist",
+    "api:run": "api-extractor run --local --verbose",
+    "publishOnly": "node scripts/publish.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist",
+    "types",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com"
+  },
   "keywords": [],
-  "author": "",
+  "author": "misterzhouzhou <16619930394@163.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
+    "@microsoft/api-extractor": "^7.19.4",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-node-resolve": "^13.1.3",
-    "@rollup/plugin-replace": "^4.0.0",
+    "@types/request": "^2.48.8",
     "rollup": "^2.70.1",
-    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.31.2",
-    "typescript": "^4.6.3",
-    "shelljs": "^0.8.5",
-    "commander": "^9.1.0"
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "request": "^2.88.2"
   }
 }

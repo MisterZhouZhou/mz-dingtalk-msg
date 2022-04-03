@@ -1,11 +1,3 @@
-/*
- * @Author: misterzhou
- * @Date: 2022-04-01 10:26:50
- * @LastEditTime: 2022-04-01 10:26:50
- * @LastEditors: misterzhou
- * @FilePath: /mz-rollup-template/scripts/publish.js
- * @Description: 
- */
 const path = require('path');
 const shelljs = require('shelljs');
 const { program } = require('commander');
