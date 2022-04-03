@@ -1,6 +1,6 @@
 {
   "name": "@zwmumu/dingtalk-msg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "钉钉机器人发送消息",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -15,7 +15,7 @@
   },
   "files": [
     "dist",
-    "types",
+    "typings",
     "README.md"
   ],
   "publishConfig": {
