@@ -2,7 +2,7 @@ const path = require('path');
 const shelljs = require('shelljs');
 const { program } = require('commander');
 
-const targetFile = path.resolve(__dirname, '../dist/package.json');
+const targetFile = path.resolve(__dirname, '../package.json');
 const packagejson = require(targetFile);
 const currentVersion = packagejson.version;
 const versionArr = currentVersion.split('.');
@@ -29,7 +29,7 @@ if (options.versions) {
 function publish() {
   // shelljs.sed('-i', '"name": "ktools"', '"name": "@kagol/ktools"', targetFile); // 修改包名
   shelljs.sed('-i', `"version": "${currentVersion}"`, `"version": "${newVersion}"`, targetFile); // 修改版本号
-  shelljs.sed('-i', `"version": "${currentVersion}"`, `"version": "${newVersion}"`, path.resolve(__dirname, '../package.json')); // 同步更新项目中的版本号
+  // shelljs.sed('-i', `"version": "${currentVersion}"`, `"version": "${newVersion}"`, path.resolve(__dirname, '../package.json')); // 同步更新项目中的版本号
   shelljs.cd('dist');
   shelljs.exec('npm publish'); // 发布
 }

@@ -1,5 +1,5 @@
 {
-  "name": "dingtalk-msg",
+  "name": "@zwmumu/dingtalk-msg",
   "version": "1.0.0",
   "description": "钉钉机器人发送消息",
   "main": "dist/index.js",
